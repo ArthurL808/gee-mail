@@ -81,16 +81,22 @@
 					var newDate = document.createElement('td')
 					var newSub = document.createElement('td')
 					var newSend = document.createElement('td')
+
+					var newBody = document.createElement('td')
 					
 					newDate.innerText = addedMessage.date
 					newSub.innerText = addedMessage.subject
 					newSend.innerText = addedMessage.sender
-
+					newBody.innerText = addedMessage.body
+					
+					addedRow.appendChild(newBody);
 					addedRow.appendChild(newDate);
 					addedRow.appendChild(newSub);
 					addedRow.appendChild(newSend)
 					tbody.appendChild(addedRow)
-					
+					newBody.style.display = 'none'
+					addClickHandler(addedRow,newBody)
+
 					count++;
 					document.getElementById("counter").innerText = 'Inbox: ' + count;					
 				},2500)
