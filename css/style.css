@@ -29,26 +29,21 @@ td{
     font-family: Impact;    
 }
 .tableBody{
-    border: 1px solid black;
     display: grid;
-    width: 100%;
+    grid-template-columns: auto auto auto;
+    background-color: #2196F3;
+    padding: 10px;
 
-}
-.column{
-    display: flex;
-    flex: 33%;
-    
 }
 
 .Row{
-    border: 3px solid black;
-    display: flex;
-    align-content: center;
-    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: white;
+    padding: 10px;
 }
 
 .sendCol{
-    display: flex;
-    flex-direction: column;
+    display: grid;
     border: 1px solid black;
 }
