@@ -18,10 +18,6 @@ td{
     font-weight: 20;
 }
 
-table{
-    border: 2pt solid black;
-    background-color: azure;
-}
 .mailBox{
     top:40px;
     left:425px;
@@ -32,3 +28,15 @@ table{
     color: red;
     font-family: Impact;    
 }
+.tableBody{
+    width: 100%;
+
+}
+
+.Row{
+    border: 5px solid black;
+    display: flex;
+    align-content: center;
+    width: 100%;
+}
+

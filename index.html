@@ -11,7 +11,7 @@
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
         //For every geemail messagae create a new row within the tbody
-				var tbody = document.querySelector('tbody') 
+				var tbody = document.querySelector('.tableBody') 
 				
 				for (var i = 0; i < window.geemails.length; i++) {
 					let message = window.geemails[i]; 
@@ -22,16 +22,18 @@
 					// 	<td>{message.subject}</td>
 					// </tr>`
 					
-					var newRow = document.createElement('tr')
-					var dateEle = document.createElement('td')
-					var sendEle = document.createElement('td')
-					var subEle = document.createElement('td')
+					var newRow = document.createElement('div')
+					var dateEle = document.createElement('div')
+					var sendEle = document.createElement('div')
+					var subEle = document.createElement('div')
 
 					sendEle.innerText = message.sender
 					subEle.innerText = message.subject
 					dateEle.innerText = message.date 
-
 					
+					sendEle.className = 'sender'
+					subEle.className = 'subject'	
+					dateEle.className = 'date'
 					newRow.appendChild(sendEle)
 					newRow.appendChild(subEle)
 					newRow.appendChild(dateEle)
@@ -39,8 +41,8 @@
 						var newMessage = [message.sender,message.subject,message.date,message.body]
 				
 				// created table row for message body
-				var messageRow = document.createElement('tr');
-				var messageEle = document.createElement('td');
+				var messageRow = document.createElement('div');
+				var messageEle = document.createElement('div');
 				messageEle.innerText = newMessage;
 				messageRow.appendChild(messageEle);
 				messageRow.style.display = 'none';
@@ -78,12 +80,12 @@
 					// console.log(getNewMessage);
 					var addedMessage = getNewMessage();
 					
-					var addedRow = document.createElement('tr')
-					var newDate = document.createElement('td')
-					var newSub = document.createElement('td')
-					var newSend = document.createElement('td')
-					var bodyRow = document.createElement('tr')
-					var newBody = document.createElement('td')
+					var addedRow = document.createElement('div')
+					var newDate = document.createElement('div')
+					var newSub = document.createElement('div')
+					var newSend = document.createElement('div')
+					var bodyRow = document.createElement('div')
+					var newBody = document.createElement('div')
 					
 					newSend.innerText = addedMessage.sender
 					newSub.innerText = addedMessage.subject
@@ -133,21 +135,20 @@
 			<div id="outgoing">
 				<textarea name="compose" id="compose" cols="50" rows="10"></textarea>
 			</div>
-			<table border="1">
+				<div>
 				<h2 id="counter">
 				</h2>
-				<tr>
+			</div>
+			
+			<div class = "tableBody">
+				<div class="row">
+						<div class="column"><h3>Sender</h3></div>
+						<div class="column"><h3>Subject</h3></div>
+						<div class="column"><h3>Date</h3></div>
+					</div>
+				</div>
 					
-					<th><h3>Sender</h3></th>
-					<th><h3>Subject</h3></th>
-					<th><h3>Date</h3></th>
-					
-				</tr>
 				
-				<tbody>
-				</tbody>
-
-			</table>
 		</div>
 	</body>
 </html>
